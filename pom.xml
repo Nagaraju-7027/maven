@@ -1,45 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/POM/4.0.0/maven.xsd">
-
-    <!-- This is the model version, which is always 4.0.0 -->
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
+    <!-- Basic Project Information -->
     <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId> <!-- Group ID: Reverse domain name -->
+    <artifactId>sample-maven-project</artifactId> <!-- Artifact ID: Name of your project -->
+    <version>1.0-SNAPSHOT</version> <!-- Version: Typically 1.0-SNAPSHOT during development -->
+    <packaging>jar</packaging> <!-- Packaging: Type of artifact (e.g., jar, war) -->
+    
+    <!-- Repositories where Maven looks for dependencies -->
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+    </repositories>
 
-    <!-- Project coordinates: groupId, artifactId, version -->
-    <groupId>com.example</groupId>
-    <artifactId>my-maven-project</artifactId>
-    <version>1.0-SNAPSHOT</version>
-
-    <!-- The packaging type, can be 'jar', 'war', 'pom', etc. -->
-    <packaging>jar</packaging>
-
-    <!-- Project dependencies -->
+    <!-- Dependencies: List of libraries your project depends on -->
     <dependencies>
-        <!-- Example of a JUnit dependency for unit testing -->
+        <!-- Example: JUnit dependency for unit testing -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>  <!-- Only included during testing -->
+            <version>4.13.2</version>
+            <scope>test</scope> <!-- Scope: test dependencies are used only in the test phase -->
         </dependency>
+
+        <!-- Example: Apache Commons Lang for utilities -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.12.0</version>
+        </dependency>
+
     </dependencies>
 
-    <!-- Build configuration (e.g., plugins) -->
+    <!-- Build Settings and Plugins -->
     <build>
         <plugins>
+            <!-- Example: Maven Compiler Plugin to specify Java source and target version -->
             <plugin>
-                <!-- Compiler plugin to specify Java source and target version -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <source>1.8</source>  <!-- Set Java source version -->
-                    <target>1.8</target>  <!-- Set Java target version -->
+                    <source>1.8</source> <!-- Java source version -->
+                    <target>1.8</target> <!-- Java target version -->
                 </configuration>
             </plugin>
+
+            <!-- Example: Maven Surefire Plugin to run tests -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+            </plugin>
+
         </plugins>
     </build>
+
+    <!-- Other Optional Configuration -->
+    <properties>
+        <java.version>1.8</java.version> <!-- Default Java version for your project -->
+    </properties>
 
 </project>
 
