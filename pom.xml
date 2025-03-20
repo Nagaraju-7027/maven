@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/POM/4.0.0/maven.xsd">
+
+    <!-- This is the model version, which is always 4.0.0 -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Project coordinates: groupId, artifactId, version -->
+    <groupId>com.example</groupId>
+    <artifactId>my-maven-project</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!-- The packaging type, can be 'jar', 'war', 'pom', etc. -->
+    <packaging>jar</packaging>
+
+    <!-- Project dependencies -->
+    <dependencies>
+        <!-- Example of a JUnit dependency for unit testing -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>  <!-- Only included during testing -->
+        </dependency>
+    </dependencies>
+
+    <!-- Build configuration (e.g., plugins) -->
+    <build>
+        <plugins>
+            <plugin>
+                <!-- Compiler plugin to specify Java source and target version -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source>  <!-- Set Java source version -->
+                    <target>1.8</target>  <!-- Set Java target version -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
+
